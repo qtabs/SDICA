@@ -1,12 +1,11 @@
 SDICA - Spatial Discriminant ICA (MATLAB implementation)
-
-------------------------------------------------------------------------------
+========================================================
 
 Spatial Discriminant-ICA MATLAB implementation, with some scripts for 
 importing fMRI data using SPM.  This version: April2014
 
 Libs written by Alejandro Tabas <alextabas-AT-gmail-DOT-com>. Write me if you 
-want to report a bug, ask for help or have a beer! :)
+want to report a bug, ask for help or have a beer! ;)
 
 This implementation is part of my Master's Thesis: "Basis Decomposition 
 Discriminant ICA". If you are curious, you can download it from here:
