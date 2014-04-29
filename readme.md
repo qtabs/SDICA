@@ -1,5 +1,5 @@
-SDICA - Spatial Discriminant ICA (MATLAB implementation)
-========================================================
+SDICA - Spatial Discriminant ICA
+================================
 
 Spatial Discriminant-ICA MATLAB implementation, with some scripts for 
 importing fMRI data using SPM.  This version: April2014
