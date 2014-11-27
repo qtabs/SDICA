@@ -74,6 +74,12 @@ switch lower(s_interactive)
 end
 
 oldDimension = size (vectors, 1);
+
+% In this case we change the maxNumOfComp = lastEig:
+if lastEig > oldDimension
+    lastEig = oldDimension;
+end
+
 if ~(b_interactive)
   if lastEig < 1 | lastEig > oldDimension
     error(sprintf('Illegal value [ %d ] for parameter: ''lastEig''\n', lastEig));
@@ -82,6 +88,7 @@ if ~(b_interactive)
     error(sprintf('Illegal value [ %d ] for parameter: ''firstEig''\n', firstEig));
   end
 end
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

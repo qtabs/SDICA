@@ -1,4 +1,4 @@
-function [Z, l] = computeZ(filename, N)
+function [Z, l] = computeZ_svd(filename, N)
     % -----------------------------------------------------------------------
     % computeZ(filename, N)
     % 
@@ -20,7 +20,7 @@ function [Z, l] = computeZ(filename, N)
     % Harcoded parameter: number of blocks to deal with the file 
     % (adjust manually depending on the size of the dataset and the memory 
     % of the computer)
-    k = 7;
+    k = 25;
 
 	mfile = matfile(filename);
 	[M, D] = size(mfile, 'X');
@@ -73,12 +73,18 @@ function [Z, l] = computeZ(filename, N)
 	
 	fprintf('...done!\n')	
 
+    save('X2.mat', 'X2','-V7.3');
 	fprintf('Computing eigenvalues...')
 	tic;
-	[U, S, V] = svds(X2, N);
+    [U, S, V] = svd(X2);
+    U=U(:, 1:N);
+    S=S(1:N, 1:N);
+    V=V(:, 1:N);    
+    
 	L = sqrt(S);
 	t = toc;
 	fprintf(' time: %.1fmin', t/60);
+    
     for i = 1:size(L)
 		l(i) = L(i, i);
 	end
