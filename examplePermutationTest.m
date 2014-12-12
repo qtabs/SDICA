@@ -2,6 +2,8 @@
 % data:
 
 addpath('./SDICA/');
+addpath('./validation/');
+
 % Load labels and data
     
 xfile = './data/X.mat';
@@ -12,6 +14,12 @@ qfile = './data/Q.mat';
 zfile = './data/Z.mat';
 load(qfile);
 load(zfile);
+
+% Number of elements in Z
+N=500;
+
+Z = Z(1:N, :);
+Q = Q(1:N, :);
 
 % Set parameters:
 kappa = 0.9;

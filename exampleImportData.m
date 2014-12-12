@@ -122,7 +122,12 @@ for i = 1:length(subjects)
 
     % 2. Subject specific preprocessing: PCA
     fprintf('-- Preprocessig...\n')
-    [E, D] = pcamat(X, minNumOfComp, maxNumOfComp, 'off', 'on');
+    % In this case we change the maxNumOfComp = lastEig:
+    if maxNumOfComp > size (X, 1)       
+        [E, D] = pcamat(X, minNumOfComp, size (X, 1), 'off', 'on'); 
+    else
+        [E, D] = pcamat(X, minNumOfComp, maxNumOfComp, 'off', 'on');         
+    end
     X = (inv(sqrt(D)) * E') * X;
 
 

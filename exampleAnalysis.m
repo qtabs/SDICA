@@ -46,7 +46,7 @@ for kappa = Kappa
 		end
 
 		% Saves the new representation of the data for later use
-		saveXhatfile = [resultsFold, './K', int2str(kappa * 10), 'Xhat.mat'];
+		saveXhatfile = [resultsFold, './K', int2str(kappa * 10),  '/','Xhat.mat'];
 		save(saveXhatfile, 'Xh', 'n', 'N');
 	end
 
